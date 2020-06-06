@@ -137,6 +137,11 @@ $(function() {
 
         length = id.length - 1;
 
+        if (localStorage.length === 0) {
+            const basket_goods_clear = $('<p class="basket-goods__clear">Корзина пуста</p>')
+            $('.basket-goods__container').prepend(basket_goods_clear);
+        }
+
         for (let i = 0; i <= length; i++) {
             let obj = localStorage.getItem(id[i]);
             obj = JSON.parse(obj);
